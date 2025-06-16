@@ -17,7 +17,7 @@ form {
 
 input[type="email"], input[type="password"], input[type="submit"] {
     display: block;
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #28a745;
@@ -28,4 +28,5 @@ input[type="submit"] {
     background-color: #28a745;
     color: white;
     cursor: pointer;
+    width: 100%;
 }

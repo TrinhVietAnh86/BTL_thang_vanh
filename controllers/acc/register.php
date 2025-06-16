@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
     $stmt->execute([$email]);
     if ($stmt->rowCount() > 0) {
-        echo "Email đã tồn tại. <a href='../views/register.php'>Thử lại</a>";
+        echo "Email đã tồn tại. <a href='../../views/acc/register.php'>Thử lại</a>";
         exit;
     }
 
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $pdo->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
     
     if ($stmt->execute([$email, $hashedPassword])) {
-        echo "Đăng ký thành công. <a href='../views/login.php'>Đăng nhập</a>";
+        echo "Đăng ký thành công. <a href='../../views/acc/login.php'>Đăng nhập</a>";
     } else {
         echo "Đã xảy ra lỗi.";
     }

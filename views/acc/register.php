@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="/BTL_thang_vanh/public/css/acc/style.css">
     <title>Đăng ký</title>
 </head>
 <body>

@@ -4,7 +4,7 @@
 
   <nav class="menu-nav">
     <div class="menu-left">
-      <img src="https://via.placeholder.com/40" alt="Logo" class="logo-img">
+      <img src="/BTL_thang_vanh/public/image/logo/logo.png" alt="Logo" class="logo-img">
       <div class="tenhang"><p>RAU CỦ STORE</p></div>
     </div>
     <div class="menu-links">
@@ -17,7 +17,7 @@
         <input type="text" placeholder="Tìm kiếm..." />
         <button class="search-button">🔍</button>
       </div>
-      <a href="../../views/acc/login.php" class="account-button">Tài khoản</a>
+      <a href="../views/acc/login.php" class="account-button">Tài khoản</a>
     </div>
   </nav>
 

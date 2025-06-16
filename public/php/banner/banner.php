@@ -1,11 +1,11 @@
     <link rel="stylesheet" href="/BTL_thang_vanh/public/css/banner/banner.css">
     <script src="/BTL_thang_vanh/public/js/banner/banner.js" defer></script>
-
+    
     <?php
     $images = [
-        '/BTL_thang_vanh/image/anh/anh1.jpg',
-        '/BTL_thang_vanh/image/anh/anh2.jpg',
-        '/BTL_thang_vanh/image/anh/anh3.jpg',
+        '/BTL_thang_vanh/public/image/anh/anh1.jpg',
+        '/BTL_thang_vanh/public/image/anh/anh2.jpg',
+        '/BTL_thang_vanh/public/image/anh/anh3.jpg',
     ];
     ?>
     <div class="slider-container">
@@ -19,4 +19,3 @@
         <button class="nav-button left">&#10094;</button>
         <button class="nav-button right">&#10095;</button>
     </div>
-
