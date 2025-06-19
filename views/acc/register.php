@@ -5,6 +5,7 @@
     <title>Đăng ký</title>
 </head>
 <body>
+    <?php include '/BTL_thang_vanh/public/php/menu/menudangnhap.php';?>
     <form action="../../controllers/acc/register.php" method="POST">
         <h2>Đăng ký tài khoản</h2>
         <input type="email" name="email" placeholder="Email" required />

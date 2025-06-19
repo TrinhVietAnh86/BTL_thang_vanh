@@ -9,7 +9,7 @@
 
 <body>
     <div id="khung">
-        <div><?php include '../../config/connect/connect.php' ?></div>
+        <div><?php include '../../models/connect/connect.php' ?></div>
         <div><?php include '../../public/php/menu/menudangnhap.php' ?></div>
         <div><?php include '../../public/php/banner/banner.php' ?></div>
     </div>

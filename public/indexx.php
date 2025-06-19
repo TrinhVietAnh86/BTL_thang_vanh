@@ -11,7 +11,7 @@
 
 <body>
     <div id="khung">
-        <div><?php include '../config/connect/connect.php' ?></div>
+        <div><?php include '../models/connect/connect.php' ?></div>
         <div><?php include 'php/menu/menu.php' ?></div>
         <div><?php include 'php/banner/banner.php' ?></div>
     </div>
