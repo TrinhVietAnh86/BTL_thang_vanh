@@ -23,14 +23,21 @@ class ProductController {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $tensp = $_POST['tensp'];
             $giasp = $_POST['giasp'];
-            $anh = $_FILES['anh'];
             $mota = $_POST['mota'];
 
-            if ($this->model->add($tensp, $giasp, $anh, $mota)) {
-                header('Location: ./admin.php?controller=product&action=index');
-                exit;
+            $ten_anh = $_FILES['anh']['name'];
+            $tmp_anh = $_FILES['anh']['tmp_name'];
+            $duongdan = __DIR__ . '/../../public/image/anhsp/' . $ten_anh;
+
+            if (move_uploaded_file($tmp_anh, $duongdan)) {
+                if ($this->model->add($tensp, $giasp, $ten_anh, $mota)) {
+                    header('Location: ./admin.php?controller=product&action=index');
+                    exit;
+                } else {
+                    echo "Lỗi khi thêm sản phẩm.";
+                }
             } else {
-                echo "Lỗi khi thêm sản phẩm.";
+                echo "Lỗi khi upload ảnh.";
             }
         }
     }

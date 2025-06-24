@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 12, 2025 lúc 11:23 AM
--- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.0.30
+-- Host: 127.0.0.1
+-- Generation Time: Jun 24, 2025 at 01:37 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,49 +18,50 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `btl`
+-- Database: `btl`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `sanpham`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `sanpham` (
   `id` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `tensp` varchar(255) NOT NULL,
+  `giasp` int(11) NOT NULL DEFAULT 0,
+  `anh` varchar(255) DEFAULT NULL,
+  `mota` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `sanpham`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(1, 'trinhvanh1212@gmail.com', '$2y$10$s2D./whNZDyL8CkeVYQIe.31mkTPtq1.CBpA5Id.5Dj7wUw/7P4qK'),
-(2, 'trinhvanh2@gmail.com', '$2y$10$VMzwzQAq8yQlH2gRLReVsegNbdAACM6R5Z30nU25Rz5e6R0r3iMai');
+INSERT INTO `sanpham` (`id`, `tensp`, `giasp`, `anh`, `mota`) VALUES
+(1, 'Dầu gội phủ bạc', 250000, 'https://assets.unileversolutions.com/v1/116912108.png', NULL),
+(2, 'Dầu gội thảo mộc', 300000, 'https://media.comem.vn/uploads/2024/07/srm_tram_tra_(8).webp', NULL);
 
 --
--- Chỉ mục cho các bảng đã đổ
---
-
---
--- Chỉ mục cho bảng `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
--- AUTO_INCREMENT cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- Indexes for table `sanpham`
 --
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `sanpham`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `sanpham`
+--
+ALTER TABLE `sanpham`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -17,7 +17,7 @@ $obstart = ob_start();
     <?php foreach ($products as $sp): ?>
         <tr>
             <td><?= $sp['id'] ?></td>
-            <td><img class="avatar" src="<?= $sp['anh'] ?>" alt=""></td>
+            <td><img class="avatar" src="/BTL_thang_vanh/public/image/anhsp/<?php echo $sp['anh']; ?>" alt=""></td>
             <td><?= $sp['tensp'] ?></td>
             <td><?= $sp['giasp'] ?></td>
             <td><?= $sp['mota'] ?></td>
