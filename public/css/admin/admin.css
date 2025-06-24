@@ -1,0 +1,91 @@
+/* Định dạng chung cho trang */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Định dạng tiêu đề */
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Định dạng nút (ws-btn) */
+.ws-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #54bc69;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ws-btn:hover {
+    background-color: #54bc69;
+}
+
+/* Định dạng nút "Xóa" với màu đỏ */
+.ws-btn:last-child {
+    background-color: #54bc69;
+}
+
+.ws-btn:last-child:hover {
+    background-color: #54bc69;
+}
+
+/* Định dạng margin bottom cho nút "Thêm mới" */
+.mb-2 {
+    margin-bottom: 15px;
+}
+
+/* Định dạng bảng */
+.my_table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Định dạng tiêu đề bảng (th) */
+.my_table th {
+    background-color: #54bc69;
+    color: #fff;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Định dạng hàng của bảng (tr) */
+.my_table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Định dạng ô dữ liệu (td) */
+.my_table td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+/* Định dạng hình ảnh avatar */
+.avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Định dạng hàng chẵn */
+.my_table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Định dạng khi di chuột qua hàng */
+.my_table tr:hover {
+    background-color: #e9ecef;
+}
