@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 25, 2025 at 10:06 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th6 25, 2025 lúc 05:12 PM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `btl`
+-- Cơ sở dữ liệu: `btl`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sanpham`
+-- Cấu trúc bảng cho bảng `sanpham`
 --
 
 CREATE TABLE `sanpham` (
@@ -36,67 +36,72 @@ CREATE TABLE `sanpham` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `sanpham`
+-- Đang đổ dữ liệu cho bảng `sanpham`
 --
 
 INSERT INTO `sanpham` (`id`, `tensp`, `giasp`, `anh`, `mota`) VALUES
-(8, 'ca tim', 51000, 'tải xuống.jpg', 'ca tim ngon và nhiều tác dụng khác'),
-(9, 'tranh', 50000, 'images.jpg', 'tranh'),
-(10, 'khoai tây', 12000, 'tải xuống (1).jpg', 'khoai tây siêu sạch, trồng tại nhà kính.');
+(10, 'cahgbjb', 120000000, '1.jpg', 'fshjfy'),
+(11, 'ca', 12000000, '3.jpg', 'dfg'),
+(12, 'SGTH', 45635, '5.jpg', 'FHTRH'),
+(13, 'hfhaf', 53643856, '4.jpg', 'sfjafa'),
+(14, 'SGTHgjk', 4354545, '3.jpg', '43yrtu7t'),
+(15, 'cahgbjb', 453254, 'Screenshot 2024-09-24 191301.png', '435dfdjt');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(1, 'trinhvanh1212@gmail.com', '$2y$10$s2D./whNZDyL8CkeVYQIe.31mkTPtq1.CBpA5Id.5Dj7wUw/7P4qK'),
-(2, 'trinhvanh2@gmail.com', '$2y$10$VMzwzQAq8yQlH2gRLReVsegNbdAACM6R5Z30nU25Rz5e6R0r3iMai'),
-(3, 'thang1@gmail.com', '$2y$10$1OCe5LRojdoKeXELDdQ/weRiJisyuFz.m2ecLhVFJGxA7gdFybFha');
+INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
+(6, 'admin', 'trinhvanh2@gmail.com', '$2y$10$.6qeuLKYVHmxFaroKpYvpOBypFc.uwvVIrMYiJdzOpT/QRslY67uu'),
+(7, '', 'trinhvanh1@gmail.com', '$2y$10$xFazDqyRCiuJ8uAOZMzHfe3pPHZWovLkfFmzzEV49XGdAvL.RegFa'),
+(8, '', 'trinhvanh3@gmail.com', '$2y$10$UcLzdJEY1XPZY/pslj7wMewEfuhLdeccLsSIwYmSLKSCmAl3CoPPK'),
+(9, '', 'baitaplon@gmail.com', '$2y$10$yf/1SNTJ8uUAmADz6motoOaNh/HKqCIxxMclGplYzfuc.mP5doVvq');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `sanpham`
+-- Chỉ mục cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `sanpham`
+-- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

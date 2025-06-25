@@ -15,7 +15,7 @@ $user = $_SESSION["user"];
 <body>
     <form action="./../../controllers/acc/logout.php" method="POST">
         <h2>Tài Khoản</h2>
-        <p>Xin chào, <?= htmlspecialchars($user['email']) ?>!</p>
+        <p>Xin chào, <?= htmlspecialchars($user['username']) ?>!</p>
         <input type="submit" value="Đăng Xuất" />
     </form>
 </body>
