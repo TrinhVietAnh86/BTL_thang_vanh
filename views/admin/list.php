@@ -12,6 +12,7 @@ $obstart = ob_start();
         <th>Hình ảnh</th>
         <th>Tên</th>
         <th>Giá</th>
+        <th>Mô tả</th>
         <th>Hành động</th>
     </tr>
     <?php foreach ($products as $sp): ?>
@@ -22,8 +23,8 @@ $obstart = ob_start();
             <td><?= $sp['giasp'] ?></td>
             <td><?= $sp['mota'] ?></td>
             <td>
-                <a class="ws-btn" href="index.php?controller=product&action=edit&id=<?= $sp['id'] ?>">Sửa</a>
-                <a class="ws-btn" href="index.php?controller=product&action=delete&id=<?= $sp['id'] ?>" onclick="return confirm('Xóa?')">Xóa</a>
+                <a class="ws-btn" href="admin.php?controller=product&action=edit&id=<?= $sp['id'] ?>">Sửa</a>
+                <a class="ws-btn" href="admin.php?controller=product&action=delete&id=<?= $sp['id'] ?>" onclick="return confirm('Xóa?')">Xóa</a>
             </td>
         </tr>
     <?php endforeach; ?>
