@@ -3,6 +3,7 @@ require_once '../../models/connect/connect.php';
 $pdo = Database::connect(); // Thêm dòng này để có biến $pdo
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
     $email = $_POST["email"];
     $password = $_POST["password"];
     $repassword = $_POST["repassword"];
@@ -23,11 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Mã hóa mật khẩu và lưu vào DB
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-    $stmt = $pdo->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
-    
-    if ($stmt->execute([$email, $hashedPassword])) {
-       header("Location: ../../views/acc/login.php");
-exit();
+    $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+
+    if ($stmt->execute([$username, $email, $hashedPassword])) {
+        header("Location: ../../views/acc/login.php");
+        exit();
     } else {
         echo "Đã xảy ra lỗi.";
     }

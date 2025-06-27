@@ -16,7 +16,7 @@ form {
     border-radius: 10px;
 }
 
-input[type="email"], input[type="password"], input[type="submit"] {
+input[type="email"], input[type="password"], input[type="submit"], input[type="text"] {
     display: block;
     width: 90%;
     padding: 10px;
