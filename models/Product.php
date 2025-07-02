@@ -38,6 +38,12 @@
                 $stmt = $this->pdo->prepare("DELETE FROM sanpham WHERE id = ?");
                 return $stmt->execute([$id]);
             }
+            //show sản phẩm
+            public function show($id) {
+                $stmt = $this->pdo->prepare("SELECT * FROM sanpham WHERE id = ?");
+                $stmt->execute([$id]);
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+            }
 
         }
     ?>

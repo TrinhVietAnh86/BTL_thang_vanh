@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="/BTL_thang_vanh/public/css/admin/edit.css">
 <form method="post" action="admin.php?controller=product&action=update&id=<?= $product['id'] ?>" enctype="multipart/form-data">
     <h2>Cập nhật sản phẩm</h2>
@@ -9,3 +10,5 @@
     Mô tả: <textarea name="mota"><?= $product['mota'] ?></textarea><br>
     <button type="submit">Cập nhật</button>
 </form>
+
+

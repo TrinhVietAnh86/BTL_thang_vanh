@@ -92,10 +92,6 @@ class ProductController {
             echo "Lỗi khi xóa sản phẩm.";
         }
     }
-   
-    
-    
-
 }
 
 ?>
