@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: /BTL_thang_vanh/public/admin.php");
             exit();
         } else {
-            header("Location: ../../views/index/index.php");
+            header("Location: ../../index/index.php");
             exit();
         }
     } else {

@@ -17,7 +17,7 @@
         <input type="text" placeholder="Tìm kiếm..." />
         <button class="search-button">🔍</button>
       </div>
-      <a href="../acc/logout.php" class="account-button">Tài khoản</a>
+      <a href="../views/acc/logout.php" class="account-button">Tài khoản</a>
     </div>
   </nav>
 

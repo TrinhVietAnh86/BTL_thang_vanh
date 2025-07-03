@@ -1,7 +1,4 @@
-<?php
-include_once '../models/connect/connect.php';
-// giả sử bạn đã có biến $products chứa danh sách sản phẩm
-?>
+
 
 <!DOCTYPE html>
 <html>
