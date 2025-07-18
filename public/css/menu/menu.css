@@ -1,0 +1,100 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #ffffff;
+  margin: auto;
+}
+
+.menu-nav {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.menu-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.menu-links {
+  display: flex;
+  gap: 24px;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu-links a:hover {
+  color: #2e7d32; /* xanh lá đậm */
+}
+
+.menu-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-box {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.search-box input {
+  border: none;
+  padding: 6px 12px;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-button {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #1b5e20;
+}
+
+.account-button {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.account-button:hover {
+  background-color: #1b5e20;
+}
