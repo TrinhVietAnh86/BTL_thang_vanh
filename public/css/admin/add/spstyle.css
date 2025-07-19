@@ -1,4 +1,4 @@
-/* Reset cơ bản */
+/* Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,84 +6,93 @@
     font-family: Arial, sans-serif;
 }
 
-/* Body với nền trắng, canh giữa form */
+/* Body hoặc container (nếu không nằm trong layout) */
 body {
     background-color: #ffffff;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    padding: 50px 20px;
 }
 
 /* Form chính */
 form {
-    background-color: #e8f5e9; /* Xanh lá nhạt */
+    background-color: #e8f5e9;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 100, 0, 0.2);
+    max-width: 600px;
     width: 100%;
-    max-width: 400px;
 }
 
 /* Tiêu đề */
 form h2 {
     text-align: center;
-    color: #2e7d32; /* Xanh lá đậm */
-    margin-bottom: 20px;
+    color: #2e7d32;
+    margin-bottom: 25px;
 }
 
-/* Ô input */
-form input[type="text"],
-form input[type="email"],
-form input[type="password"] {
+/* Label đơn giản (dòng đầu tiên, ví dụ: Tên: ...) */
+form > label,
+form > select,
+form > input,
+form > textarea {
+    display: block;
     width: 100%;
-    padding: 12px;
-    margin: 8px 0;
+}
+
+/* Input, select, textarea */
+form input[type="text"],
+form input[type="number"],
+form input[type="file"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
     border: 1px solid #a5d6a7;
     border-radius: 5px;
     outline: none;
+    font-size: 14px;
     transition: border-color 0.3s;
 }
 
-/* Input khi focus */
-form input:focus {
+form input:focus,
+form textarea:focus,
+form select:focus {
     border-color: #388e3c;
 }
 
-/* Nút submit */
-form input[type="submit"] {
+/* Textarea */
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Button */
+form button {
     width: 100%;
     padding: 12px;
     background-color: #4caf50;
     color: white;
+    font-size: 15px;
     border: none;
     border-radius: 5px;
-    margin-top: 15px;
     cursor: pointer;
-    font-size: 16px;
     transition: background-color 0.3s;
 }
 
-form input[type="submit"]:hover {
+form button:hover {
     background-color: #388e3c;
 }
 
-/* Đoạn văn dưới cùng */
-form p {
-    text-align: center;
-    margin-top: 15px;
-    color: #2e7d32;
-}
-
-/* Link đăng nhập */
-form a {
-    color: #2e7d32;
+/* Nếu có link */
+a {
     text-decoration: none;
+    color: #2e7d32;
     font-weight: bold;
     transition: color 0.3s;
 }
 
-form a:hover {
+a:hover {
     color: #1b5e20;
-    text-decoration: none;
 }

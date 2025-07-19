@@ -11,7 +11,8 @@ $obstart = ob_start();
             <th>ID</th>
             <th>Tên đăng nhập</th>
             <th>Email</th>
-            <th>mật khẩu</th>
+            <th>phone</th>
+            <th>address</th>
             <th>role</th>
             <th>hành động</th>
         </tr>
@@ -20,7 +21,8 @@ $obstart = ob_start();
                 <td><?= htmlspecialchars($user['id']) ?></td>
                 <td><?= htmlspecialchars($user['username']) ?></td>
                 <td><?= htmlspecialchars($user['email']) ?></td>
-                <td><?= htmlspecialchars($user['password']) ?></td>
+                <td><?= htmlspecialchars($user['phone']) ?></td>
+                <td><?= htmlspecialchars($user['address']) ?></td>
                 <td><?= htmlspecialchars($user['role']) ?></td>
             <td>
                 <a class="ws-btn" href="admin.php?controller=user&action=edit&id=<?= $user['id'] ?>">Sửa</a>

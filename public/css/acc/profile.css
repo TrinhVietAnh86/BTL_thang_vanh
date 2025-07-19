@@ -1,0 +1,80 @@
+/* Cấu hình tổng thể */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f9f3;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #c8e6c9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề */
+h2 {
+    color: #2e7d32;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Nhóm thông tin */
+.info-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #388e3c;
+}
+
+.info-value {
+    color: #333;
+}
+
+/* Các nút */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-edit {
+    background-color: #4caf50;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #388e3c;
+}
+
+.btn-logout {
+    background-color: #8d6e63;
+    color: white;
+    border: none;
+    padding: 10px;
+}
+
+.btn-logout:hover {
+    background-color: #6d4c41;
+}

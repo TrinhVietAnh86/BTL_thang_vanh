@@ -11,7 +11,7 @@ $total = $data['total'] ?? 0;
     <title>Giỏ hàng của bạn</title>
     <link rel="stylesheet" href="/BTL_thang_vanh/public/css/admin/layout.css">
     <!-- Thêm file CSS riêng nếu cần -->
-    <link rel="stylesheet" href="/BTL_thang_vanh/public/css/user/cart.css" type="text/css">
+    <link rel="stylesheet" href="/BTL_thang_vanh/public/css/cart/cart.css" type="text/css">
 </head>
 <body>
     

@@ -17,7 +17,7 @@
         <input type="text" placeholder="Tìm kiếm..." />
         <button class="search-button">🔍</button>
       </div>
-      <a href="/BTL_thang_vanh/public/adminuser.php?controller=acc&action=showProfile" class="account-button">Tài khoản</a>
+      <a href="/BTL_thang_vanh/public/adminuser.php?controller=acc&action=profile" class="account-button">Tài khoản</a>
       <a href="/BTL_thang_vanh/public/admin.php?controller=product&action=viewCart" class="account-button">Giỏ hàng</a>
     </div>
   </nav>

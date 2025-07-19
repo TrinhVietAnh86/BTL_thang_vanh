@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4fff4; /* nền xanh lá nhạt */
+    color: #333;
+    padding: 20px;
+}
+
+h2 {
+    color: #2e7d32; /* xanh lá đậm */
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-bottom: 20px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    color: #2e7d32;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #388e3c;
+}
+
+a {
+    color: #2e7d32;
+    text-decoration: none; /* loại bỏ gạch chân */
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin-top: 15px;
+}
+
+input[type="submit"][style*="red"] {
+    background-color: red !important;
+    color: white;
+}

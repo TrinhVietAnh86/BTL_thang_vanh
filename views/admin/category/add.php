@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-<!-- <h1 class="add_h1">Thêm mới sản phẩm</h1> -->
+<link rel="stylesheet" href="/BTL_thang_vanh/public/css/admin/add/category.css">
 <div>
     <div class="form-container">
         <form id="multiStepDonationForm"
@@ -12,7 +12,7 @@ ob_start();
                 <h2>Thêm mới loại sản phẩm</h2>
 
                 <div class="form-group">
-                    <label for="name">Tên loại sản phẩm</label>
+                    <label for="name">Tên danh mục</label>
                     <input type="text" id="name" name="name">
                 </div>
 

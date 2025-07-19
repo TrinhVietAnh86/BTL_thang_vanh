@@ -1,31 +1,32 @@
-<?php
-$pageTitle = "Thông tin cá nhân";
-?>
-    <h2>Thông tin cá nhân</h2>
-    <?php if (isset($error)) { ?>
-        <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
-    <?php } ?>
-    <?php if (isset($success)) { ?>
-        <p style="color: green;"><?php echo htmlspecialchars($success); ?></p>
-    <?php } ?>
-    <form action="/BTL_thang_vanh/public/adminuser.php?controller=acc&action=doEditProfile" method="POST">
-        <label>Tên đăng nhập:</label>
-        <input type="text" name="username" value="<?php echo htmlspecialchars($user['username']); ?>" required />
-        <label>Email:</label>
-        <input type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required />
-        <label>Số điện thoại:</label>
-        <input type="text" name="phone" value="<?php echo htmlspecialchars($user['phone'] ?? ''); ?>" />
-        <label>Địa chỉ:</label>
-        <input type="text" name="address" value="<?php echo htmlspecialchars($user['address'] ?? ''); ?>" />
-        <label>Mật khẩu mới (để trống nếu không đổi):</label>
-        <input type="password" name="password" placeholder="Mật khẩu mới" />
-        <label>Nhập lại mật khẩu:</label>
-        <input type="password" name="repassword" placeholder="Nhập lại mật khẩu" />
-        <input type="submit" value="Cập nhật" />
-    </form>
-    <form action="/BTL_thang_vanh/public/adminuser.php?controller=acc&action=deleteAccount" method="POST" onsubmit="return confirm('Bạn có chắc muốn xóa tài khoản? Hành động này không thể hoàn tác!');">
-        <input type="submit" value="Xóa tài khoản" style="background-color: red; color: white;" />
-    </form>
-    <p><a href="/BTL_thang_vanh/public/adminuser.php?controller=acc&action=logout">Đăng xuất</a></p>
+<link rel="stylesheet" href="/BTL_thang_vanh/public/css/acc/profile.css">
+<body>
+    <div class="container">
+        <h2>Thông tin cá nhân</h2>
+        <?php if (isset($user) && $user): ?>
+            <div class="info-group">
+                <span class="info-label">Tên đăng nhập:</span>
+                <span class="info-value"><?php echo htmlspecialchars($user['username'] ?? 'Chưa cập nhật'); ?></span>
+            </div>
+            <div class="info-group">
+                <span class="info-label">Email:</span>
+                <span class="info-value"><?php echo htmlspecialchars($user['email'] ?? 'Chưa cập nhật'); ?></span>
+            </div>
+            <div class="info-group">
+                <span class="info-label">Số điện thoại:</span>
+                <span class="info-value"><?php echo htmlspecialchars($user['phone'] ?? 'Chưa cập nhật'); ?></span>
+            </div>
+            <div class="info-group">
+                <span class="info-label">Địa chỉ:</span>
+                <span class="info-value"><?php echo htmlspecialchars($user['address'] ?? 'Chưa cập nhật'); ?></span>
+            </div>
+            <div class="buttons">
+                <a href="/BTL_thang_vanh/public/adminuser.php?controller=acc&action=editProfile" class="btn btn-edit">Sửa thông tin</a>
+                <form action="/BTL_thang_vanh/public/adminuser.php?controller=acc&action=logout" method="POST" style="width: 100%;">
+                    <input type="submit" value="Đăng xuất" class="btn btn-logout" style="width: 100%;">
+                </form>
+            </div>
+        <?php else: ?>
+            <p>Không tìm thấy thông tin người dùng.</p>
+        <?php endif; ?>
+    </div>
 </body>
-</html>

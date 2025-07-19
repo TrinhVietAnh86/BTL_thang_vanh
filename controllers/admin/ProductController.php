@@ -52,39 +52,49 @@ class ProductController {
         include '../views/admin/edit.php';
     }
     public function update($id) {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $tensp = $_POST['tensp'];
-            $giasp = $_POST['giasp'];
-            $mota = $_POST['mota'];
-            $catId = $_POST['category_id'];
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $tensp = $_POST['tensp'];
+        $giasp = $_POST['giasp'];
+        $mota = $_POST['mota'];
+        $catId = $_POST['category_id'];
 
-            // Kiểm tra có upload ảnh mới không
-            if (!empty($_FILES['anh']['name'])) {
-                $ten_anh = $_FILES['anh']['name'];
-                $tmp_anh = $_FILES['anh']['tmp_name'];
-                $duongdan = __DIR__ . '/../../public/image/anhsp/' . $ten_anh;
+        // Log dữ liệu nhận được để debug
+        error_log("Update product - ID: $id, Tensp: $tensp, Giasp: $giasp, Mota: $mota, Category_id: $catId");
 
-                if (move_uploaded_file($tmp_anh, $duongdan)) {
-                    $result = $this->model->update($id, $tensp, $giasp, $ten_anh, $mota , $_POST['category_id']);
-                } else {
-                    echo "Lỗi khi upload ảnh.";
-                    return;
-                }
+        // Kiểm tra có upload ảnh mới không
+        $ten_anh = '';
+        if (!empty($_FILES['anh']['name'])) {
+            $ten_anh = $_FILES['anh']['name'];
+            $tmp_anh = $_FILES['anh']['tmp_name'];
+            $duongdan = __DIR__ . '/../../public/image/anhsp/' . $ten_anh;
+
+            if (move_uploaded_file($tmp_anh, $duongdan)) {
+                error_log("Image uploaded successfully for product ID: $id");
             } else {
-                // Không upload ảnh mới, lấy ảnh cũ từ DB
-                $product = $this->model->getById($id);
-                $ten_anh = $product['anh'];
-                $result = $this->model->update($id, $tensp, $giasp, $ten_anh, $mota , $_POST['category_id']);
+                error_log("Error uploading image for product ID: $id - " . print_r($_FILES['anh'], true));
+                echo "Lỗi khi upload ảnh.";
+                return;
             }
+        } else {
+            // Không upload ảnh mới, lấy ảnh cũ từ DB
+            $product = $this->model->getById($id);
+            $ten_anh = $product['anh'] ?? '';
+            error_log("Using existing image: $ten_anh for product ID: $id");
+        }
 
-            if ($result) {
-                header('Location: ./admin.php?controller=product&action=index');
-                exit;
-            } else {
-                echo "Lỗi khi cập nhật sản phẩm.";
-            }
+        $result = $this->model->update($id, $tensp, $giasp, $ten_anh, $mota, $catId);
+        error_log("Update result for product ID: $id - Result: " . ($result ? 'success' : 'failure'));
+
+        if ($result) {
+            header('Location: ./admin.php?controller=product&action=index');
+            exit;
+        } else {
+            error_log("Failed to update product ID: $id - Possible category_id issue");
+            echo "Lỗi khi cập nhật sản phẩm.";
         }
     }
+    }
+
     // Xóa sản phẩm
     public function delete($id) {
         if ($this->model->delete($id)) {
@@ -150,4 +160,6 @@ class ProductController {
         header('Location: /BTL_thang_vanh/public/admin.php?controller=product&action=viewCart');
         exit;
     }
+
+    
 }

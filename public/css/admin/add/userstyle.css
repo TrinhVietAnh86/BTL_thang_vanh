@@ -1,4 +1,4 @@
-/* Reset cơ bản */
+/* Reset & font */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,51 +6,64 @@
     font-family: Arial, sans-serif;
 }
 
-/* Body với nền trắng, canh giữa form */
+/* Body */
 body {
     background-color: #ffffff;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-}
-
-/* Form chính */
-form {
-    background-color: #e8f5e9; /* Xanh lá nhạt */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 100, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
+    padding: 40px 20px;
 }
 
 /* Tiêu đề */
-form h2 {
-    text-align: center;
-    color: #2e7d32; /* Xanh lá đậm */
+h2 {
+    color: #2e7d32;
     margin-bottom: 20px;
 }
 
-/* Ô input */
+/* Thông báo lỗi */
+p[style*="color: red"] {
+    margin-bottom: 15px;
+}
+
+/* Form */
+form {
+    background-color: #e8f5e9; /* nền xanh nhạt */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 100, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Label */
+form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #1b5e20;
+}
+
+/* Input & Select */
 form input[type="text"],
 form input[type="email"],
-form input[type="password"] {
+form input[type="password"],
+form select {
     width: 100%;
-    padding: 12px;
-    margin: 8px 0;
+    padding: 10px;
+    margin-bottom: 15px;
     border: 1px solid #a5d6a7;
     border-radius: 5px;
     outline: none;
     transition: border-color 0.3s;
 }
 
-/* Input khi focus */
-form input:focus {
+form input:focus,
+form select:focus {
     border-color: #388e3c;
 }
 
-/* Nút submit */
+/* Nút Submit */
 form input[type="submit"] {
     width: 100%;
     padding: 12px;
@@ -58,9 +71,8 @@ form input[type="submit"] {
     color: white;
     border: none;
     border-radius: 5px;
-    margin-top: 15px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
     transition: background-color 0.3s;
 }
 
@@ -68,22 +80,16 @@ form input[type="submit"]:hover {
     background-color: #388e3c;
 }
 
-/* Đoạn văn dưới cùng */
-form p {
-    text-align: center;
-    margin-top: 15px;
-    color: #2e7d32;
-}
-
-/* Link đăng nhập */
-form a {
-    color: #2e7d32;
+/* Link phía dưới */
+p a {
+    margin-top: 20px;
+    display: inline-block;
     text-decoration: none;
+    color: #2e7d32;
     font-weight: bold;
     transition: color 0.3s;
 }
 
-form a:hover {
+p a:hover {
     color: #1b5e20;
-    text-decoration: none;
 }

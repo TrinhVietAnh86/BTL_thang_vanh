@@ -89,53 +89,58 @@ class UserController {
     }
 
     public function update() {
-        if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
-            error_log("Redirecting from update: No admin session");
-            header('Location: /BTL_thang_vanh/public/adminuser.php?controller=acc&action=login');
-            exit;
-        }
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $id = $_POST['id'] ?? 0;
-            $username = trim($_POST['username'] ?? '');
-            $email = trim($_POST['email'] ?? '');
-            $phone = trim($_POST['phone'] ?? '');
-            $address = trim($_POST['address'] ?? '');
-            $password = $_POST['password'] ?? '';
-            $repassword = $_POST['repassword'] ?? '';
-            $role = $_POST['role'] ?? 'user';
-
-            $user = $this->model->getById($id);
-            if (!$user) {
-                $error = "Người dùng không tồn tại!";
-                $users = $this->model->getAll();
-                include $_SERVER['DOCUMENT_ROOT'] . '/BTL_thang_vanh/views/admin/user/user_list.php';
-                return;
-            }
-
-            if ($password && $password !== $repassword) {
-                $error = "Mật khẩu không khớp!";
-                include $_SERVER['DOCUMENT_ROOT'] . '/BTL_thang_vanh/views/admin/user/user_edit.php';
-                return;
-            }
-
-            if ($this->model->checkUserExists($username, $email) && ($username !== $user['username'] || $email !== $user['email'])) {
-                $error = "Tên đăng nhập hoặc email đã tồn tại!";
-                include $_SERVER['DOCUMENT_ROOT'] . '/BTL_thang_vanh/views/admin/user/user_edit.php';
-                return;
-            }
-
-            if ($this->model->update($id, $username, $email, $phone, $address, $password ?: null)) {
-                header('Location: /BTL_thang_vanh/public/admin.php?controller=user&action=index');
-                exit;
-            } else {
-                $error = "Cập nhật người dùng thất bại!";
-                include $_SERVER['DOCUMENT_ROOT'] . '/BTL_thang_vanh/views/admin/user/user_edit.php';
-            }
-        } else {
-            $this->edit();
-        }
+    if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+        error_log("Redirecting from update: No admin session");
+        header('Location: /BTL_thang_vanh/public/adminuser.php?controller=acc&action=login');
+        exit;
     }
 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $id = $_POST['id'] ?? 0;
+        $username = trim($_POST['username'] ?? '');
+        $email = trim($_POST['email'] ?? '');
+        $phone = trim($_POST['phone'] ?? '');
+        $address = trim($_POST['address'] ?? '');
+        $password = $_POST['password'] ?? '';
+        $repassword = $_POST['repassword'] ?? '';
+        $role = $_POST['role'] ?? 'user';
+
+        // Log dữ liệu nhận được để debug
+        error_log("Update attempt - ID: $id, Username: $username, Email: $email, Phone: $phone, Address: $address, Password: " . ($password ? 'set' : 'not set') . ", Role: $role");
+
+        $user = $this->model->getById($id);
+        if (!$user) {
+            $error = "Người dùng không tồn tại!";
+            $users = $this->model->getAll();
+            include $_SERVER['DOCUMENT_ROOT'] . '/BTL_thang_vanh/views/admin/user/user_list.php';
+            return;
+        }
+
+        if ($password && $password !== $repassword) {
+            $error = "Mật khẩu không khớp!";
+            include $_SERVER['DOCUMENT_ROOT'] . '/BTL_thang_vanh/views/admin/user/user_edit.php';
+            return;
+        }
+
+        if ($this->model->checkUserExists($username, $email) && ($username !== $user['username'] || $email !== $user['email'])) {
+            $error = "Tên đăng nhập hoặc email đã tồn tại!";
+            include $_SERVER['DOCUMENT_ROOT'] . '/BTL_thang_vanh/views/admin/user/user_edit.php';
+            return;
+        }
+
+        // Truyền role vào phương thức update của model
+        if ($this->model->update($id, $username, $email, $phone, $address, $password ?: null, $role)) {
+            header('Location: /BTL_thang_vanh/public/admin.php?controller=user&action=index');
+            exit;
+        } else {
+            $error = "Cập nhật người dùng thất bại!";
+            include $_SERVER['DOCUMENT_ROOT'] . '/BTL_thang_vanh/views/admin/user/user_edit.php';
+        }
+    } else {
+        $this->edit();
+    }
+    }
+    
     public function delete() {
         if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             error_log("Redirecting from delete: No admin session");

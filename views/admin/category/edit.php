@@ -1,6 +1,7 @@
 <?php
 ob_start();
 ?>
+<link rel="stylesheet" href="/BTL_thang_vanh/public/css/admin/add/category.css">
 <div>
     <div class="form-container">
 <form method="post" action="admin.php?controller=category&action=update&id=<?= $category['id'] ?>" enctype="multipart/form-data">

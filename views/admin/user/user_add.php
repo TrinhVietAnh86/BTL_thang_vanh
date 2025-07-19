@@ -1,6 +1,8 @@
 <?php
 $pageTitle = "Thêm người dùng";
 ?>
+<link rel="stylesheet" href="/BTL_thang_vanh/public/css/admin/add/userstyle.css">
+<body>
     <h2>Thêm người dùng</h2>
     <?php if (isset($error)) { ?>
         <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
@@ -25,6 +27,5 @@ $pageTitle = "Thêm người dùng";
         </select>
         <input type="submit" value="Thêm người dùng" />
     </form>
-    <p><a href="/BTL_thang_vanh/public/adminuser.php?controller=acc&action=login">Đăng nhập để quản lý</a></p>
 </body>
 </html>

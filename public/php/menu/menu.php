@@ -8,7 +8,7 @@
       <div class="tenhang"><p>RAU CỦ STORE</p></div>
     </div>
     <div class="menu-links">
-      <a href="#">Trang chủ</a>
+      <a href="/BTL_thang_vanh/public/indexx.php">Trang chủ</a>
       <a href="#">Sản phẩm</a>
       <a href="#">Thông tin</a>
     </div>

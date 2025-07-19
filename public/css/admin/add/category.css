@@ -6,84 +6,91 @@
     font-family: Arial, sans-serif;
 }
 
-/* Body với nền trắng, canh giữa form */
+/* Body (trong layout.php cần body mở rộng) */
 body {
     background-color: #ffffff;
+}
+
+/* Container chính */
+.form-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    padding: 50px 20px;
 }
 
-/* Form chính */
+/* Form */
 form {
     background-color: #e8f5e9; /* Xanh lá nhạt */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 100, 0, 0.2);
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
 }
 
-/* Tiêu đề */
+/* Tiêu đề form */
 form h2 {
     text-align: center;
     color: #2e7d32; /* Xanh lá đậm */
     margin-bottom: 20px;
 }
 
-/* Ô input */
-form input[type="text"],
-form input[type="email"],
-form input[type="password"] {
+/* Nhóm form */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label */
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #1b5e20;
+    font-weight: bold;
+}
+
+/* Input */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
     width: 100%;
     padding: 12px;
-    margin: 8px 0;
     border: 1px solid #a5d6a7;
     border-radius: 5px;
     outline: none;
     transition: border-color 0.3s;
 }
 
-/* Input khi focus */
-form input:focus {
+/* Khi focus vào input */
+.form-group input:focus {
     border-color: #388e3c;
 }
 
-/* Nút submit */
-form input[type="submit"] {
-    width: 100%;
-    padding: 12px;
+/* Nút */
+.btn {
+    padding: 12px 20px;
     background-color: #4caf50;
     color: white;
     border: none;
     border-radius: 5px;
-    margin-top: 15px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
+    display: block;
+    width: 100%;
     transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
-form input[type="submit"]:hover {
+.btn:hover {
     background-color: #388e3c;
 }
 
-/* Đoạn văn dưới cùng */
-form p {
-    text-align: center;
-    margin-top: 15px;
-    color: #2e7d32;
-}
-
-/* Link đăng nhập */
-form a {
-    color: #2e7d32;
+/* Nếu có link */
+a {
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+    color: #2e7d32;
 }
 
-form a:hover {
+a:hover {
     color: #1b5e20;
-    text-decoration: none;
 }
