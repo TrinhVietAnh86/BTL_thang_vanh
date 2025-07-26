@@ -44,4 +44,12 @@ class CategoryModel
         $stmt = $this->pdo->prepare("DELETE FROM categories WHERE id=?");
         return $stmt->execute([$id]);
     }
+    // Phương thức tìm kiếm danh mục
+    public function search($keyword)
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM categories WHERE name LIKE ?");
+        $search = "%$keyword%";
+        $stmt->execute([$search]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

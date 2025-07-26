@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2025 at 10:59 AM
+-- Generation Time: Jul 26, 2025 at 12:51 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,7 +45,8 @@ INSERT INTO `cart` (`id`, `user_id`, `product_id`, `quantity`, `created_at`) VAL
 (10, 8, 9, 2, '2025-07-18 18:59:19'),
 (11, 6, 9, 1, '2025-07-19 16:10:26'),
 (12, 6, 8, 1, '2025-07-19 17:25:45'),
-(13, 6, 7, 1, '2025-07-19 17:25:50');
+(13, 6, 7, 1, '2025-07-19 17:25:50'),
+(26, 11, 9, 2, '2025-07-26 09:56:50');
 
 -- --------------------------------------------------------
 
@@ -65,8 +66,7 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `name`) VALUES
 (2, 'củ'),
 (3, 'quả'),
-(5, 'rau'),
-(8, 'châu âu');
+(5, 'rau');
 
 -- --------------------------------------------------------
 
@@ -88,10 +88,16 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`id`, `tensp`, `giasp`, `anh`, `mota`, `category_id`) VALUES
-(7, 'quả nho', 200000, 'tải xuống (2).jpg', 'quả nho', 3),
+(7, 'quả nho', 20000, 'tải xuống (2).jpg', 'quả nho', 3),
 (8, 'quả chanh', 30000, 'images.jpg', 'quả chanh ', 3),
 (9, 'táo', 10000, 'OIP.jfif', 'táo siêu ngọt', 3),
-(10, 'táo', 10000, 'Screenshot 2025-07-14 010527.png', 'discord', 8);
+(11, 'khoai tây', 100000, 'khoai.jpg', 'củ khoai tây ', 2),
+(12, 'cà rốt', 20000, 'caruot.jpg', 'cà ruốt tươi nhập khẩu bán theo kg', 2),
+(13, 'quả dưa chuột', 8000, 'duachuot.jpg', 'quả dưa chuột nhập bán theo kg', 3),
+(14, 'cà tím', 15000, 'tải xuống.jpg', 'quả cà tím nhập khẩu bán theo kg', 3),
+(15, 'quả cà chua', 5000, 'cachua.webp', 'cà chua trồng nhà kính siêu sạch', 3),
+(16, 'rau muống', 5000, 'raumuong.jpg', 'rau muống siêu sạch', 5),
+(17, 'xúp lơ', 10000, 'xuplo.jpg', 'xúp lơ siêu sạch siêu tươi', 5);
 
 -- --------------------------------------------------------
 
@@ -120,7 +126,8 @@ INSERT INTO `users` (`id`, `username`, `email`, `phone`, `address`, `password`, 
 (7, 'thang', 'thang7@gmai.com', '0382795496', 'sjdaihshad', '$2y$10$qKjilL7gyFwZRRKswnLPEe5HgXkPzk3BhLpiQam.rabWUkcX65kq.', 'user'),
 (8, 'tam', 'trinhvanh8@gmail.com', '0962361521', 'hcm', '$2y$10$M0ry/q2CyaICPibFDPSlJesYts0.SF52ILtK1LwQvtV6cehfT9cEK', 'user'),
 (9, 'chin', 'trinhvanh9@gmail.com', '0962361521', 'hà nội', '$2y$10$z37B4Jeo2XEpN2gBhn3yhOPyIInir5oYIx08cURYpJE4uAAhitJDC', 'admin'),
-(10, 'muoi', 'trinhvanh10@gmail.com', '0962361521', 'ha', '$2y$10$AxWnd1k5rDd1GIJPC1OT1OM2eP3SpeoE0kWcEB2/0BN.SKcjj0e.a', 'user');
+(10, 'muoi', 'trinhvanh10@gmail.com', '0962361521', 'ha', '$2y$10$AxWnd1k5rDd1GIJPC1OT1OM2eP3SpeoE0kWcEB2/0BN.SKcjj0e.a', 'user'),
+(11, 'thang123', 'thang123@gmail.com', '02938928932', 'ajsdajsdj', '$2y$10$ZS4diu2D3y2GPY/IJ8h/9.aMGHliEgClTZXp0abyqGXjOlMcKB62a', 'user');
 
 --
 -- Indexes for dumped tables
@@ -163,7 +170,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -175,13 +182,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

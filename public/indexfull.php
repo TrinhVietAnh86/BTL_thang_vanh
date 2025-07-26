@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/menu/menu.css">
     <link rel="stylesheet" href="css/banner/banner.css">
     <link rel="stylesheet" href="css/font/home.css">
+     <link rel="stylesheet" href="/BTL_thang_vanh/public/css/style.css">
 
 </head>
 

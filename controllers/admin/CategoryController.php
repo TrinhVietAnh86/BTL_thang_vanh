@@ -58,7 +58,6 @@ class CategoryController {
             echo "Lỗi khi xóa danh mục.";
         }
     }
-
     
     
     

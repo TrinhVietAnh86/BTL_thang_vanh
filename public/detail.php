@@ -1,6 +1,6 @@
 <?php
-$controllerName = $_GET['controller'] ?? 'home';
-$action = $_GET['action'] ?? 'home';
+$controllerName = $_GET['controller'] ?? 'detail';
+$action = $_GET['action'] ?? 'detail';
 
 $controllerClass = ucfirst($controllerName) . 'Controller';
 require_once  '../controllers/admin/homeController.php';

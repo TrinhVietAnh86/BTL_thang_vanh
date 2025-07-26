@@ -13,10 +13,12 @@
       <a href="#">Thông tin</a>
     </div>
     <div class="menu-right">
-      <div class="search-box">
-        <input type="text" placeholder="Tìm kiếm..." />
-        <button class="search-button">🔍</button>
-      </div>
+       <form class="search-box" method="GET" action="./indexx.php">
+          <input type="hidden" name="controller" value="home">
+          <input type="hidden" name="action" value="search">
+          <input type="text" name="keyword" placeholder="Tìm kiếm..." />
+          <button class="search-button" type="submit">🔍</button>
+        </form>
       <a href="./adminuser.php?controller=acc&action=login" class="account-button">Tài khoản</a>
     </div>
     

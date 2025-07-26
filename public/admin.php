@@ -5,7 +5,7 @@ session_start();
 error_log("admin.php accessed with controller: " . ($_GET['controller'] ?? 'none') . ", action: " . ($_GET['action'] ?? 'none'));
 
 // Thêm 'category' vào danh sách hợp lệ
-$validControllers = ['acc', 'user', 'product', 'category'];
+$validControllers = ['acc', 'user', 'product', 'category', 'home', 'cart', 'detail'];
 $controllerName = isset($_GET['controller']) ? strtolower(trim($_GET['controller'])) : 'user';
 $action = isset($_GET['action']) ? trim($_GET['action']) : 'index';
 
