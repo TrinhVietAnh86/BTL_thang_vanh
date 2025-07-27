@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/banner/banner.css">
     <link rel="stylesheet" href="../public/css/font/home.css">
     <link rel="stylesheet" href="/BTL_thang_vanh/public/css/style.css">
+    <link rel="stylesheet" href="css/footer/footer.css">
 </head>
 
 <body>
@@ -15,6 +16,7 @@
         <div><?php include 'php/menu/menu.php' ?></div>
         <div><?php include 'php/banner/banner.php' ?></div>
         <div><?php include './indexxx.php' ?></div>
+        <div><?php include '../views/layout/footter.php' ?></div>
 
     </div>
     <?php

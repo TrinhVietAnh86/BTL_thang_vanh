@@ -15,6 +15,7 @@
                     <a href="./admin.php?controller=category&action=index">loại Sản phẩm</a>
                     <a href="./admin.php?controller=product&action=index"> Sản phẩm</a>
                     <a href="./admin.php?controller=user&action=index"> Người dùng</a>
+                    <a href="/BTL_thang_vanh/public/adminuser.php?controller=acc&action=logout">đang xuất</a>
                 </li>
             </ul>
         </nav>

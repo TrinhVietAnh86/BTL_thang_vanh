@@ -124,20 +124,14 @@ class Product {
         $stmt = $this->pdo->prepare("DELETE FROM cart WHERE user_id = ? AND product_id = ?");
         return $stmt->execute([$user_id, $product_id]);
     }
-    // tìm kiếm sản phẩm
+    // Tìm kiếm sản phẩm theo tên hoặc danh mục
     public function search($keyword) {
-        $stmt = $this->pdo->prepare("SELECT * FROM sanpham WHERE tensp LIKE ?");
-        $search = "%$keyword%";
-        $stmt->execute([$search]);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-    // phân trang sản phẩm
-    public function getPaginated($limit, $offset) {
-        $sql = "SELECT * FROM sanpham ORDER BY id DESC LIMIT :limit OFFSET :offset";
+        $sql = "SELECT sp.* FROM sanpham sp 
+                JOIN categories c ON sp.category_id = c.id 
+                WHERE sp.tensp LIKE ? OR c.name LIKE ?";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
-        $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
-        $stmt->execute();
+        $search = '%' . $keyword . '%';
+        $stmt->execute([$search, $search]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

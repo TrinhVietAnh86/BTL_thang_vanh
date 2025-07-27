@@ -9,7 +9,7 @@
     </div>
     <div class="menu-links">
       <a href="/BTL_thang_vanh/public/indexx.php">Trang chủ</a>
-      <a href="#">Sản phẩm</a>
+      <a href="./indexxx.php">Sản phẩm</a>
       <a href="#">Thông tin</a>
     </div>
     <div class="menu-right">
